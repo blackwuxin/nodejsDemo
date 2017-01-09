@@ -19,8 +19,7 @@ app.delete('/',function(req,res){
   console.log('home delete request');
   res.send('hello delete');
 });
-//OPTIOONS
-//获取服务器支持的http请求方法。用来检测服务器的性能。
+//OPTION
 app.options('/',function(req,res){
   console.log('home options request');
   res.send('hello options');
