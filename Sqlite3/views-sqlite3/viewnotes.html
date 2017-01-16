@@ -1,0 +1,10 @@
+<table>
+  <% notes.forEach(function(note){ %>
+    <tr>
+      <td>
+        <p><%= new Date(note.ts).toString() %>: by <b><%= note.author %></b></p>
+        <p><%= note.note %></p>
+      </td>
+  </tr>
+  <% }) %>
+</table>
