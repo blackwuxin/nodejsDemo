@@ -16,7 +16,17 @@ var urlencodedParser = bodyParser.urlencoded({extended:false});
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(multer({dest:'/tmp/'}).array('image'));
+app.use(multer({
+  dest:'/tmp/',
+  limits:{
+    fileSize:1000
+  },
+  onFileSizeLimit:function(file){
+    if(file.size > 1000){
+      fs.unlink('./'+file.path)
+    }
+  }
+  }).array('image'));
 app.use(cookieParser());
 // app.use(errorHandler({dumpExceptions:true}));
 
