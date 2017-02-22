@@ -1,0 +1,19 @@
+{
+  "name": "autogo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "autogo": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "commander": "^2.9.0",
+    "fs-extra": "^2.0.0"
+  }
+}
