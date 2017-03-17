@@ -1,0 +1,8 @@
+[2017-03-17 15:55:01.057] [ERROR] cheese - error
+[2017-03-17 15:55:01.062] [FATAL] cheese - fatal
+[2017-03-17 15:55:16.019] [TRACE] cheese - Entering cheese testing
+[2017-03-17 15:55:16.024] [DEBUG] cheese - Got cheese
+[2017-03-17 15:55:16.024] [INFO] cheese - Chess is Gouda
+[2017-03-17 15:55:16.024] [WARN] cheese - Cheess is to ripe
+[2017-03-17 15:55:16.024] [ERROR] cheese - error
+[2017-03-17 15:55:16.024] [FATAL] cheese - fatal
