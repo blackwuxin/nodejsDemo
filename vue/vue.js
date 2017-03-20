@@ -67,15 +67,15 @@ var app7 = new Vue({
   }
 })
 
-var vm = new Vue({
-  data: {
-    a: 1
-  },
-  created: function () {
-    // `this` 指向 vm 实例
-    console.log('a is: ' + this.a)
-  }
-})
+// var vm = new Vue({
+//   data: {
+//     a: 1
+//   },
+//   created: function () {
+//     // `this` 指向 vm 实例
+//     console.log('a is: ' + this.a)
+//   }
+// })
 // -> "a is: 1"
 
 var watchExampleVM = new Vue({
@@ -116,5 +116,12 @@ var watchExampleVM = new Vue({
       // 这是我们为用户停止输入等待的毫秒数
       500
     )
+  }
+})
+
+var app8 = new Vue({
+  el: '#app-8',
+  data: {
+      loginType:'username'
   }
 })

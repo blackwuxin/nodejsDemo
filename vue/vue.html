@@ -8,7 +8,7 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
-<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
 </head>
 
 <body>
@@ -46,12 +46,23 @@
         </ol>
     </div>
     <div id="watch-example">
-  <p>
-    Ask a yes/no question:
-    <input v-model="question">
-  </p>
-  <p>{{ answer }}</p>
-</div>
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
+    <div id="app-8">
+  <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address">
+    </template>
+    </div>
+  
     <script src="./vue.js"></script>
 </body>
 
