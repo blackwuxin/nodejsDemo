@@ -53,16 +53,104 @@
         <p>{{ answer }}</p>
     </div>
     <div id="app-8">
-  <template v-if="loginType === 'username'">
-        <label>Username</label>
-        <input placeholder="Enter your username">
-    </template>
-    <template v-else>
-        <label>Email</label>
-        <input placeholder="Enter your email address">
-    </template>
+        <template v-if="loginType == 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <h1 v-show="ok">Hello!</h1>
     </div>
-  
+    <div id="app-9">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+        <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+        <!-- 阻止单击事件冒泡 -->
+        <a v-on:click.stop="doThis"></a>
+        <!-- 提交事件不再重载页面 -->
+        <form v-on:submit.prevent="onSubmit"></form>
+        <!-- 修饰符可以串联  -->
+        <a v-on:click.stop.prevent="doThat"></a>
+        <!-- 只有修饰符 -->
+        <form v-on:submit.prevent></form>
+        <!-- 添加事件侦听器时使用事件捕获模式 -->
+        <div v-on:click.capture="doThis">...</div>
+        <!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
+        <div v-on:click.self="doThat">...</div>
+        <!-- 点击事件将只会触发一次 -->
+        <a v-on:click.once="doThis"></a>
+        <!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+        <input v-on:keyup.13="submit">
+        <!-- 同上 -->
+        <input v-on:keyup.enter="submit">
+        <!-- 缩写语法 -->
+        <input @keyup.enter="submit">
+        <!-- Alt + C -->
+        <input @keyup.alt.67="clear">
+        <!-- Ctrl + Click -->
+        <div @click.ctrl="doSomething">Do something</div>
+    </div>
+    <div id="app-10">
+        <input v-model="message" placeholder="edit me">
+        <p>Message is: {{ message }}</p>
+        <span>Multiline message is:</span>
+        <p style="white-space: pre">{{ message }}</p>
+        <br>
+        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+        <br>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <br>
+        <label for="checkbox">{{ checked }}</label>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+        <br>
+        <div id="example-4" class="demo">
+            <input type="radio" id="one" value="One" v-model="picked">
+            <label for="one">One</label>
+            <br>
+            <input type="radio" id="two" value="Two" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>Picked: {{ picked }}</span>
+        </div>
+        <div id="example-5" class="demo">
+            <select v-model="selected">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <span>Selected: {{ selected }}</span>
+        </div>
+        <select v-model="selected1">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+            </select>
+        <span>Selected: {{ selected1 }}</span>
+    </div>
+    <div id="app-11">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+        <child message="hello!"></child>
+        <child2 my-message="world!">
+            </child>
+
+    </div>
+    <div id="counter-event-example">
+        <p>{{ total }}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+    </div>
+
     <script src="./vue.js"></script>
 </body>
 

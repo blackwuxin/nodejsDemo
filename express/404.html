@@ -8,5 +8,26 @@
 </head>
 <body>
     <h1>404</h1>
+
+    <script>
+        // window.onhashchange = checkMessage;
+        //   function checkMessage() {
+        //       var message = window.location.hash;
+        //       console.log(message);
+        // }
+
+        // window.name = '404.html'
+        // parent.location.href= 'http://localhost:8081/index.htm' + "#" + '1111';
+
+        // window.addEventListener('message', function(e) {
+        //     console.log(e.data);
+        //   },false);
+
+          window.addEventListener('message', receiveMessage);
+          function receiveMessage(event) {
+            event.source.postMessage('Nice to see you!', '*');
+          }
+        
+    </script>
 </body>
 </html>

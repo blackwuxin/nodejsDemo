@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Singleton</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var mySingleton = function(){
+            function Singleton(args){
+               var args =  args || {};
+               this.name = "mySingleton";
+               this.pointX = args.pointX || 6;
+            }
+
+            var _instance;
+            var _static = {
+                name : this.name,
+                getInstance : function(args){
+                    if(_instance == undefined){
+                        _instance = new Singleton(args);
+                    }
+                    return _instance;
+                }
+            }
+            return _static;
+        };
+
+        var test1 =  mySingleton().getInstance({pointX:5});
+        console.log(test1.pointX);
+
+
+        function Universe(args) {
+            var args = args || {};
+            this.name = args.name;
+            // 判断是否存在实例
+            if (typeof Universe.instance === 'object') {
+                return Universe.instance;
+            }
+
+            // 其它内容
+            this.start_time = 0;
+            this.bang = "Big";
+
+            // 缓存
+            Universe.instance = this;
+
+            // 隐式返回this
+        }
+
+        // 测试
+        var uni = new Universe();
+        var uni2 = new Universe({name:'uni2'});
+        var uni3 = Universe();
+        console.log(uni === uni2); // true
+    </script>
+</body>
+</html>

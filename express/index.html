@@ -31,5 +31,30 @@
     <br />
     <input type="submit" value="上传文件" />
     </form>
+
+    <!--<iframe src='http://www.ctrip.com' id='myiframe'></iframe>-->
+    
+    <!--<iframe   src = 'http://localhost:8081/index'  width="1000px" height="500px" id='myiframe2'/></iframe>-->
+
+    <script>
+      // var src = 'http://localhost:8081/index' + '#' + 'data=aaa';
+      // document.getElementById('myiframe2').src = src;
+
+        
+        // window.onhashchange = checkMessage;
+        //   function checkMessage() {
+        //       var message = window.location.hash;
+        //       console.log(message);
+        //       console.log( document.getElementById('myiframe2').contentWindow.name)
+        // }
+
+    var popup = window.open('http://localhost:8081/index', 'title');
+    popup.postMessage('Hello World!', 'http://localhost:8081/index');
+
+
+            window.addEventListener('message', function(e) {
+            console.log(e.data);
+          },false);
+    </script>
 </body>
 </html>

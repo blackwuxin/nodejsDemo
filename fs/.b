@@ -1,0 +1,1 @@
+{"presets":["react-native"],"plugins":["transform-decorators-legacy","transform-remove-console","transform-remove-debugger"]}

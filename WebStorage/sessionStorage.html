@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SessionStorage</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            if(window.sessionStorage){
+                var name = window.sessionStorage.getItem('name');
+                if(name !="" || name != null){
+                    document.getElementById("name").value = name;
+                }
+            }
+        };
+
+        function saveToSessionStorage(){
+            if(window.sessionStorage){
+                var name = document.getElementById("name").value;
+                window.sessionStorage.setItem("name",name);
+                window.location.href = "sessionStorage.html";
+            }
+        }
+    </script>
+
+    <form action='./sessionStorage.html'>
+        <input type="text" name="name" id= "name"/>
+        <input type="button" value="Save" onclick="saveToSessionStorage()"/>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "webpackDemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "loadsh": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
